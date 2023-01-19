@@ -1,0 +1,29 @@
+@import "../../styles/colors.module.scss";
+.header {
+  background-image: $color-linear-gradient;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  align-items: center;
+  ul {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    list-style: none;
+    min-height: 100%;
+    .link {
+      font-size: 1.8rem;
+      transition: all 0.2s;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      &:hover {
+        background-color: $color-primary;
+      }
+    }
+  }
+}
+.link {
+  color: white;
+  text-decoration: none;
+  font-size: 2.4rem;
+}

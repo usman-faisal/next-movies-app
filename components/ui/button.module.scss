@@ -1,0 +1,15 @@
+@import "../../styles/colors.module.scss";
+.button {
+  background-color: $color-primary;
+  color: white;
+  padding: 1rem 2rem;
+  font-family: inherit;
+  font-size: 1.8rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  &:hover {
+    scale: 1.1;
+  }
+}

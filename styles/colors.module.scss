@@ -1,0 +1,12 @@
+$color-bg: #141414;
+$color-dark: #0d0d0d;
+$color-text: #ffff;
+@mixin box-shadow-sm {
+  box-shadow: 0 1rem 1rem 0.5rem rgba($color-text, 0.02);
+}
+$color-linear-gradient: linear-gradient(
+  180deg,
+  $color-dark,
+  rgba($color-text, 0.02)
+);
+$color-primary: #e94b3cff;

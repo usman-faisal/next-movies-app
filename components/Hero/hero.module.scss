@@ -1,0 +1,30 @@
+@import "../../styles/colors.module.scss";
+.hero {
+  overflow: hidden;
+  position: relative;
+  min-height: 50vh;
+  transition: all 0.4s;
+  @include box-shadow-sm;
+  img {
+    filter: brightness(40%);
+    transition: all 0.4s;
+    z-index: -1;
+  }
+  &-textbox {
+    position: absolute;
+    top: 30%;
+    z-index: 1;
+    max-width: 80rem;
+    left: 0;
+    transform: translateX(20%);
+    line-height: -50%;
+    cursor: default;
+    h1 {
+      font-size: 8rem;
+    }
+    p {
+      font-size: 3rem;
+      margin-bottom: 3rem;
+    }
+  }
+}
