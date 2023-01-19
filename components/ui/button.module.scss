@@ -12,7 +12,11 @@
   position: relative;
   z-index: 1;
   &:hover {
+    transform: scale(1.1) translateX(1rem);
     color: $color-dark;
+  }
+  &:active {
+    transform: scale(1.05) translateX(0.5rem);
   }
   &::before {
     z-index: -1;

@@ -6,7 +6,7 @@ function MoviesSection({ moviesArr, category }) {
     <section>
       <h2 className="heading-primary">{category}</h2>
       <div className={styles["movies-container"]}>
-        {moviesArr.map((movie) => {
+        {moviesArr.map((movie, index) => {
           const imgPath = `http://image.tmdb.org/t/p/w500/${movie.poster_path}`;
           const { title, id, vote_average } = movie;
           return (
@@ -15,6 +15,7 @@ function MoviesSection({ moviesArr, category }) {
               imgPath={imgPath}
               title={title}
               rating={vote_average}
+              index={index}
             />
           );
         })}
