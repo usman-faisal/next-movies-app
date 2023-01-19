@@ -1,28 +1,43 @@
 @import "../../styles/colors.module.scss";
-.section-movies {
-  margin: 4rem 0;
-  h3 {
-    background-color: $color-primary;
-    display: inline-block;
-    padding: 1rem 2rem;
-  }
-  .movies {
-    display: flex;
-    row-gap: 2rem;
-    overflow-x: scroll;
-    column-gap: 1rem;
-    margin-top: 2rem;
-    .movie {
+.movies-container {
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 3rem;
+  grid-template-columns: repeat(auto-fit, 25rem);
+  justify-content: center;
+  display: grid;
+  .movie-card {
+    display: grid;
+    grid-template-rows: max-content 10rem;
+    background-color: #1d1d1d;
+    border-radius: 10px;
+    max-width: min-content;
+    cursor: pointer;
+    @include box-shadow-sm;
+    transition: all 0.4s;
+    &:hover {
+      scale: 1.02;
+      translate: (0, -5px);
+      @include box-shadow-lg;
+    }
+    img {
+      border-radius: 10px;
+      height: 25rem;
+      width: 25rem;
+    }
+    .textbox {
+      padding: 0.5rem 1rem;
+      display: grid;
+      grid-template-rows: 1fr min-content;
       position: relative;
-      width: 20rem;
-      justify-self: start;
-      img {
-        width: 20rem;
-        border-radius: 10px;
-      }
       h4 {
         font-size: 1.8rem;
-        font-weight: 400;
+        font-weight: 500;
+        margin-bottom: auto;
+        margin-bottom: auto;
+      }
+      .rating-box {
+        margin-top: auto;
       }
     }
   }

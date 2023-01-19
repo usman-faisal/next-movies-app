@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 import styles from "./Navbar.module.scss";
+import NavbarList from "./NavbarList";
 function Navbar() {
   return (
     <header className={styles.header}>
@@ -9,19 +10,11 @@ function Navbar() {
         REX
       </Link>
       <nav>
-        <ul>
-          <li>
-            <Link className={styles.link} href="/">
-              All movies
-            </Link>
-          </li>
-          <li>
-            <Link className={styles.link} href="/">
-              About us
-            </Link>
-          </li>
-        </ul>
+        <NavbarList />
       </nav>
+      <footer className={styles.footer}>
+        <p>&copy; All rights reserved.</p>
+      </footer>
     </header>
   );
 }

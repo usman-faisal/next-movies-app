@@ -10,3 +10,8 @@ $color-linear-gradient: linear-gradient(
   rgba($color-text, 0.02)
 );
 $color-primary: #e94b3cff;
+@mixin box-shadow-lg {
+  box-shadow: 0px 11px 9px 5px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: 0px 11px 9px 5px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 0px 11px 9px 5px rgba(0, 0, 0, 0.41);
+}

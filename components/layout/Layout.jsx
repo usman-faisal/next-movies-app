@@ -3,10 +3,10 @@ import Navbar from "./Navbar";
 
 function Layout(props) {
   return (
-    <>
+    <div id="app">
       <Navbar />
       {props.children}
-    </>
+    </div>
   );
 }
 

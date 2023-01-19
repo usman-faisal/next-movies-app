@@ -2,22 +2,37 @@
 .header {
   background-image: $color-linear-gradient;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 2rem;
-  align-items: center;
+  min-height: 100vh;
   ul {
     display: flex;
     gap: 1rem;
-    align-items: stretch;
     list-style: none;
     min-height: 100%;
+    flex-direction: column;
+    margin-top: 2.8rem;
+    justify-self: stretch;
     .link {
       font-size: 1.8rem;
-      transition: all 0.2s;
       padding: 1rem 1.5rem;
-      border-radius: 0.5rem;
-      &:hover {
+      display: block;
+      position: relative;
+      z-index: 1;
+      background: transparent;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
         background-color: $color-primary;
+        z-index: -1;
+        transition: all 0.2s linear;
+      }
+      &:hover::before {
+        width: 100%;
       }
     }
   }
@@ -26,4 +41,15 @@
   color: white;
   text-decoration: none;
   font-size: 2.4rem;
+}
+.footer {
+  margin-top: auto;
+  text-align: center;
+  p {
+    opacity: 0.2;
+  }
+}
+.active {
+  background-color: $color-primary !important;
+  z-index: 100;
 }
