@@ -5,19 +5,6 @@
   flex-direction: column;
   padding: 2rem;
   min-height: 100vh;
-  @media only screen and (max-width: 700px) {
-    background-color: $color-dark;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    flex-direction: row;
-    min-height: max-content;
-    justify-content: start;
-    gap: 1rem;
-    width: 100%;
-    align-items: center;
-    z-index: 100;
-  }
   ul {
     display: flex;
     gap: 1rem;
@@ -26,11 +13,6 @@
     flex-direction: column;
     margin-top: 2.8rem;
     justify-self: stretch;
-    @media only screen and (max-width: 700px) {
-      flex-direction: row;
-      align-items: center;
-      margin: 0;
-    }
     .link {
       font-size: 1.8rem;
       padding: 1rem 1.5rem;
@@ -65,9 +47,6 @@
   text-align: center;
   p {
     opacity: 0.2;
-  }
-  @media only screen and (max-width: 700px) {
-    display: none;
   }
 }
 .active {

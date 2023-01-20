@@ -12,9 +12,6 @@ body {
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  @media only screen and (max-width: 1020px) {
-    font-size: 50%;
-  }
 }
 *,
 *::after,
@@ -47,13 +44,6 @@ html {
   flex-direction: column;
   gap: 4.8rem;
   grid-column: 2/3;
-  @media only screen and (max-width: 1020px) {
-    padding: 0;
-  }
-  @media only screen and (max-width: 700px) {
-    grid-column: 1/-1;
-    justify-content: center;
-  }
 }
 .heading-primary {
   background-color: $color-primary;
@@ -67,8 +57,4 @@ html {
   display: grid;
   position: relative;
   grid-template-columns: minmax(max-content, 30rem) 1fr;
-  @media only screen and (max-width: 700px) {
-    grid-template-columns: 1fr;
-    justify-content: center;
-  }
 }

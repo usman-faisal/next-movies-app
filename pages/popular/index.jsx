@@ -1,24 +1,15 @@
 import React from "react";
-import MoviesSection from "../../components/Movies/MoviesSection";
-import Pagination from "../../components/ui/Pagination";
-import usePagination from "../../custom-hooks/usePagination";
+import RenderMovies from "../../components/RenderMovies";
 
 function PopularMoviesPage(props) {
-  const { data, currentPage, setCurrentPage } = usePagination(
-    "https://api.themoviedb.org/3/movie/popular?api_key=4fcf6bd89c0e925e66c089389e26dd0f&language=en-US&page="
-  );
+  const { movies, category, totalPages, url } = props;
   return (
     <main className="main">
-      {currentPage === 1 ? (
-        <>
-          <MoviesSection moviesArr={props.movies} category="popular" />
-        </>
-      ) : (
-        <MoviesSection moviesArr={data} category="popular" />
-      )}
-      <Pagination
-        currentPageState={{ currentPage, setCurrentPage }}
-        totalPages={2}
+      <RenderMovies
+        movies={movies}
+        category={category}
+        totalPages={totalPages}
+        url={url}
       />
     </main>
   );
@@ -32,6 +23,9 @@ export async function getStaticProps() {
   return {
     props: {
       movies: data.results,
+      category: "popular",
+      totalPages: 2,
+      url: "https://api.themoviedb.org/3/movie/popular?api_key=4fcf6bd89c0e925e66c089389e26dd0f&language=en-US&page=",
     },
   };
 }

@@ -8,7 +8,6 @@ function Pagination({ currentPageState, totalPages }) {
     });
     currentPageState.setCurrentPage(pageNumber);
   }
-  console.log(totalPages);
   const listArr = [];
   for (let i = 0; i < totalPages; i++) {
     listArr.push(

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 
 function MovieDetailPage(props) {
   const imgPath = "http://image.tmdb.org/t/p/w500/" + props.data.backdrop_path;
-  console.log(props.data);
   const [isLoading, setIsLoading] = useState(true);
   console.log(isLoading);
   function onImageLoad() {
