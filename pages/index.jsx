@@ -1,11 +1,7 @@
 import Hero from "../components/Hero/Hero";
 import MoviesSection from "../components/Movies/MoviesSection";
-import usePagination from "../custom-hooks/usePagination";
-// https://api.themoviedb.org/3/movie/upcoming?api_key=4fcf6bd89c0e925e66c089389e26dd0f&language=en-US&page=
+
 export default function HomePage(props) {
-  const { data, currentPage, setCurrentPage } = usePagination(
-    "https://api.themoviedb.org/3/movie/upcoming?api_key=4fcf6bd89c0e925e66c089389e26dd0f&language=en-US&page="
-  );
   return (
     <main className="main">
       <Hero />
@@ -13,6 +9,7 @@ export default function HomePage(props) {
     </main>
   );
 }
+
 export async function getStaticProps() {
   const response = await fetch(
     "https://api.themoviedb.org/3/movie/upcoming?api_key=4fcf6bd89c0e925e66c089389e26dd0f&language=en-US&page=1"

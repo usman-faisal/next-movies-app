@@ -16,6 +16,7 @@ function MoviesSection({ moviesArr, category }) {
               title={title}
               rating={vote_average}
               index={index}
+              id={id}
             />
           );
         })}

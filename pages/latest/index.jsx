@@ -12,13 +12,14 @@ function PopularMoviesPage(props) {
     <main className="main">
       {currentPage === 1 ? (
         <>
-          <MoviesSection moviesArr={props.movies} category="popular" />
+          <MoviesSection moviesArr={props.movies} category="latest" />
         </>
       ) : (
-        <MoviesSection moviesArr={data} category="popular" />
+        <MoviesSection moviesArr={data} category="latest" />
       )}
       <Pagination
-        currentPageState={{ state: currentPage, setState: setCurrentPage }}
+        currentPageState={{ currentPage, setCurrentPage }}
+        totalPages={2}
       />
     </main>
   );

@@ -1,29 +1,30 @@
 import React from "react";
 import styles from "./pagination.module.scss";
-function Pagination({ currentPageState }) {
+function Pagination({ currentPageState, totalPages }) {
   function handleClick(pageNumber) {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
-    currentPageState.setState(pageNumber);
+    currentPageState.setCurrentPage(pageNumber);
   }
+  console.log(totalPages);
+  const listArr = [];
+  for (let i = 0; i < totalPages; i++) {
+    listArr.push(
+      <li
+        key={i}
+        className={`${currentPageState.currentPage === i + 1 && styles.active}`}
+        onClick={() => handleClick(i + 1)}
+      >
+        {i + 1}
+      </li>
+    );
+  }
+
   return (
     <nav className={styles.pagination}>
-      <ul>
-        <li
-          onClick={() => handleClick(1)}
-          className={`${currentPageState.state === 1 && styles.active}`}
-        >
-          1
-        </li>
-        <li
-          onClick={() => handleClick(2)}
-          className={`${currentPageState.state === 2 && styles.active}`}
-        >
-          2
-        </li>
-      </ul>
+      <ul>{listArr}</ul>
     </nav>
   );
 }

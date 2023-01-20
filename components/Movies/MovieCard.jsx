@@ -3,9 +3,15 @@ import Image from "next/image";
 import styles from "./movies.module.scss";
 import getRating from "../../lib/getRating";
 import { motion } from "framer-motion";
-function MovieCard({ imgPath, title, rating, index }) {
+import { useRouter } from "next/router";
+function MovieCard({ imgPath, title, rating, index, id }) {
+  const router = useRouter();
+  function handleClick(id) {
+    router.replace(`/MovieDetail/${id}`);
+  }
   return (
     <motion.div
+      onClick={() => handleClick(id)}
       initial={{ opacity: 0, translateX: 100 }}
       whileInView={{ opacity: 1, translateX: 0 }}
       transition={{ duration: 0.5, delay: index * 0.01, type: false }}

@@ -17,7 +17,8 @@ function PopularMoviesPage(props) {
         <MoviesSection moviesArr={data} category="popular" />
       )}
       <Pagination
-        currentPageState={{ state: currentPage, setState: setCurrentPage }}
+        currentPageState={{ currentPage, setCurrentPage }}
+        totalPages={2}
       />
     </main>
   );
