@@ -1,16 +1,11 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 
 function MovieDetailPage(props) {
   const bgImgPath =
     "http://image.tmdb.org/t/p/original/" + props.data.backdrop_path;
   const movieImgPath =
     "http://image.tmdb.org/t/p/w500/" + props.data.poster_path;
-  const [isLoading, setIsLoading] = useState(false);
-  console.log(isLoading);
-  function onImageLoad() {
-    setIsLoading(false);
-  }
   return (
     <main className="main">
       <div className="details-header">
@@ -28,7 +23,6 @@ function MovieDetailPage(props) {
           alt={`image of ${props.title}`}
           width={300}
           height={300}
-          onLoadingComplete={onImageLoad}
         />
         <h3>{props.data.title}</h3>
       </div>

@@ -25,7 +25,7 @@ export async function getStaticProps() {
       movies: data.results,
       category: "latest",
       totalPages: 2,
-      url: "https://api.themoviedb.org/3/movie/upcoming?api_key=4fcf6bd89c0e925e66c089389e26dd0f&language=en-US&page=",
+      url: `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.imbd_api_key}&language=en-US&page=`,
     },
   };
 }

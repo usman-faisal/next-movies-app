@@ -23,7 +23,7 @@ export async function getStaticProps() {
   return {
     props: {
       movies: data.results,
-      url: "https://api.themoviedb.org/3/movie/top_rated?api_key=4fcf6bd89c0e925e66c089389e26dd0f&language=en-US&page=",
+      url: `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.imbd_api_key}&language=en-US&page=`,
       category: "top rated",
       totalPages: 2,
     },
