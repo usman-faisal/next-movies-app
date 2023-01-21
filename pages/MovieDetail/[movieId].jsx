@@ -2,22 +2,36 @@ import Image from "next/image";
 import React, { useState } from "react";
 
 function MovieDetailPage(props) {
-  const imgPath = "http://image.tmdb.org/t/p/w500/" + props.data.backdrop_path;
-  const [isLoading, setIsLoading] = useState(true);
+  const bgImgPath =
+    "http://image.tmdb.org/t/p/original/" + props.data.backdrop_path;
+  const movieImgPath =
+    "http://image.tmdb.org/t/p/w500/" + props.data.poster_path;
+  const [isLoading, setIsLoading] = useState(false);
   console.log(isLoading);
   function onImageLoad() {
     setIsLoading(false);
   }
   return (
     <main className="main">
-      <Image
-        src={imgPath}
-        alt={`image of ${props.title}`}
-        width={300}
-        height={200}
-        onLoadingComplete={onImageLoad}
-      />
-      {!isLoading && <h3>{props.data.title}</h3>}
+      <div className="details-header">
+        <Image
+          width={500}
+          height={500}
+          src={bgImgPath}
+          alt="hey"
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+      <div className="details-main">
+        <Image
+          src={movieImgPath}
+          alt={`image of ${props.title}`}
+          width={300}
+          height={300}
+          onLoadingComplete={onImageLoad}
+        />
+        <h3>{props.data.title}</h3>
+      </div>
     </main>
   );
 }

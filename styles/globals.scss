@@ -77,3 +77,35 @@ html {
     grid-template-rows: 1fr;
   }
 }
+.details-header {
+  /* max-height: 80rem; */
+  min-height: 30rem;
+  max-height: 50rem;
+  position: relative;
+  width: 100%;
+  z-index: -1;
+  /* opacity: 0; */
+  background-color: black;
+  img {
+    /* display: none; */
+    z-index: -1111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    filter: brightness(50%);
+    // width: 50rem;
+    height: 50rem;
+    // object-fit: cover;
+    background-color: black;
+  }
+}
+.details-main {
+  padding: 2rem;
+  // transform: translateY(-10%);
+  img {
+    width: 30rem;
+    height: 30rem;
+    @include box-shadow-lg;
+  }
+}
