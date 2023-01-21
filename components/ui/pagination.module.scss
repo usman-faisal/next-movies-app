@@ -1,6 +1,9 @@
 @import "../../styles/colors.module.scss";
 .pagination {
   text-align: center;
+  @include media-query("sm") {
+    margin-bottom: 10rem;
+  }
   ul {
     display: flex;
     justify-content: center;

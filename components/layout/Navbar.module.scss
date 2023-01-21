@@ -5,6 +5,18 @@
   flex-direction: column;
   padding: 2rem;
   min-height: 100vh;
+  @include media-query("sm") {
+    min-height: max-content;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    z-index: 100;
+    gap: 2rem;
+    background-color: $color-dark;
+  }
   ul {
     display: flex;
     gap: 1rem;
@@ -13,6 +25,11 @@
     flex-direction: column;
     margin-top: 2.8rem;
     justify-self: stretch;
+    @include media-query("sm") {
+      flex-direction: row;
+      margin-top: 0;
+      flex-direction: row;
+    }
     .link {
       font-size: 1.8rem;
       padding: 1rem 1.5rem;
@@ -47,6 +64,9 @@
   text-align: center;
   p {
     opacity: 0.2;
+  }
+  @include media-query("sm") {
+    display: none;
   }
 }
 .active {

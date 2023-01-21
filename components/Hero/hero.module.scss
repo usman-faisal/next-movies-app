@@ -1,6 +1,10 @@
+@import "../../styles/colors.module.scss";
 .section-hero {
   position: relative;
   height: 50vh;
+  @include media-query("md") {
+    padding: 2rem;
+  }
   img {
     filter: brightness(30%);
     border-radius: 10px;

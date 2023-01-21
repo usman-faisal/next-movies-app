@@ -4,8 +4,12 @@
   column-gap: 2rem;
   row-gap: 3rem;
   grid-template-columns: repeat(auto-fit, 25rem);
+  max-width: 100%;
+  margin: 0 auto;
   justify-content: center;
-  display: grid;
+  @include media-query("lg") {
+    grid-template-columns: repeat(auto-fit, 20rem);
+  }
   .movie-card {
     display: grid;
     grid-template-rows: max-content 10rem;
@@ -24,6 +28,10 @@
       border-radius: 10px;
       height: 25rem;
       width: 25rem;
+      @include media-query("lg") {
+        height: 20rem;
+        width: 20rem;
+      }
     }
     .textbox {
       padding: 0.5rem 1rem;
@@ -42,3 +50,8 @@
     }
   }
 }
+// .section {
+//   @include media-query("md") {
+//     padding: 2rem;
+//   }
+// }

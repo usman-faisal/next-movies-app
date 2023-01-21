@@ -3,7 +3,7 @@ import MovieCard from "./MovieCard";
 import styles from "./movies.module.scss";
 function MoviesSection({ moviesArr, category }) {
   return (
-    <section>
+    <section className={styles.section}>
       <h2 className="heading-primary">{category}</h2>
       <div className={styles["movies-container"]}>
         {moviesArr.map((movie, index) => {
