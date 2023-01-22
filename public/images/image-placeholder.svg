@@ -1,0 +1,12 @@
+<svg style="animation: skeleton-loading 0.4s linear infinite alternate;" width="200" height="200" viewBox="0 0 200 200" fill="	#C2CFD6" xmlns="http://www.w3.org/2000/svg">
+<style>
+  @keyframes skeleton-loading {
+  0% {
+    background-color: #343434;
+  }
+  100% {
+    background-color: #121212;
+  }
+}
+  </style>
+</svg>

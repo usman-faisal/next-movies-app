@@ -20,7 +20,7 @@ function MovieCard({ imgPath, title, rating, index, id }) {
       className={styles["movie-card"]}
     >
       <Image
-        blurDataURL="/images/loading.svg"
+        blurDataURL="/images/image-placeholder.svg"
         placeholder="blur"
         src={imgPath}
         height="250"

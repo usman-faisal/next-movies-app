@@ -10,6 +10,8 @@ function MovieDetailPage(props) {
     <main className="main">
       <div className="details-header">
         <Image
+          blurDataURL="/images/image-placeholder.svg"
+          placeholder="blur"
           width={500}
           height={500}
           src={bgImgPath}
@@ -19,6 +21,7 @@ function MovieDetailPage(props) {
       </div>
       <div className="details-main">
         <Image
+          blurDataURL="/images/image-placeholder.svg"
           src={movieImgPath}
           alt={`image of ${props.title}`}
           width={300}

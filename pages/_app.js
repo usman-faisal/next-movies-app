@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
   useEffect(() => {
     Router.events.on("routeChangeStart", () => setIsLoading(true));
     Router.events.on("routeChangeComplete", () => setIsLoading(false));
-  }, []);
+  }, [Router]);
   return (
     <Layout>
       {isLoading && <Loading />}
