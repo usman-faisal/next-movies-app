@@ -38,6 +38,15 @@ export async function getServerSideProps(context) {
     `https://api.themoviedb.org/3/movie/${params.movieId}?api_key=4fcf6bd89c0e925e66c089389e26dd0f&language=en-US`
   );
   const data = await response.json();
+  if (!data || !response.ok) {
+    return {
+      notFound: true,
+      redirect: {
+        destination: "/",
+        permenant: true,
+      },
+    };
+  }
   return {
     props: {
       data,

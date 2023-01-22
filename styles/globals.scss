@@ -45,6 +45,7 @@ html {
 }
 .main {
   // max-width: 140rem;
+  position: relative;
   margin: 2rem 0;
   padding: 0 10rem;
   display: flex;
@@ -80,7 +81,7 @@ html {
 .details-header {
   /* max-height: 80rem; */
   min-height: 30rem;
-  max-height: 50rem;
+  // max-height: 50rem;
   position: relative;
   width: 100%;
   z-index: -1;

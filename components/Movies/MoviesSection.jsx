@@ -1,10 +1,10 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import styles from "./movies.module.scss";
-function MoviesSection({ moviesArr, category }) {
+function MoviesSection({ moviesArr, title }) {
   return (
     <section className={styles.section}>
-      <h2 className="heading-primary">{category}</h2>
+      <h2 className="heading-primary">{title}</h2>
       <div className={styles["movies-container"]}>
         {moviesArr.map((movie, index) => {
           const imgPath = `http://image.tmdb.org/t/p/w500/${movie.poster_path}`;

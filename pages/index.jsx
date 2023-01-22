@@ -5,7 +5,7 @@ export default function HomePage(props) {
   return (
     <main className="main">
       <Hero />
-      <MoviesSection moviesArr={props.movies} category="Upcoming Movies" />
+      <MoviesSection moviesArr={props.movies} title="Upcoming Movies" />
     </main>
   );
 }
