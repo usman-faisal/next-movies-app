@@ -22,7 +22,7 @@ export async function getServerSideProps(context) {
     `https://api.themoviedb.org/3/movie/${movieCategory}?api_key=${process.env.imbd_api_key}&language=en-US&${currentPageNumber}`
   );
   const data = await response.json();
-  if (!data || !movieCategory) {
+  if (!data || !movieCategory || currentPageNumber?.slice(-1) >= 5) {
     return {
       notFound: true,
     };

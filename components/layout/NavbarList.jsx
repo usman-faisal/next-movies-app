@@ -11,7 +11,11 @@ const paths = [
 
 function NavbarList() {
   const router = useRouter();
-  const currentPath = "/";
+  const currentPath =
+    router.pathname === "/"
+      ? "/"
+      : "/sortby/" + router.query.category ?? router.query.category[0];
+
   return (
     <ul>
       {paths.map((path, index) => {

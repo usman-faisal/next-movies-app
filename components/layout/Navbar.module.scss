@@ -17,6 +17,10 @@
     gap: 2rem;
     background-color: $color-dark;
   }
+  @include media-query("xsm") {
+    padding: 1rem;
+    gap: 1rem;
+  }
   ul {
     display: flex;
     gap: 1rem;

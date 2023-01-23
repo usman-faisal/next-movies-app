@@ -1,0 +1,49 @@
+@import "../../styles/colors.module.scss";
+.details-header {
+  min-height: 30rem;
+  position: relative;
+  width: 100%;
+  z-index: -1;
+  background-color: black;
+  img {
+    z-index: -1111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    filter: brightness(50%);
+    height: 50rem;
+    background-color: black;
+  }
+}
+.details-main {
+  padding: 2rem;
+
+  img {
+    width: 30rem;
+    height: 30rem;
+    @include box-shadow-lg;
+  }
+  &-textbox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    .description {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      h3 {
+        background-color: $color-primary;
+        display: inline-block;
+        padding: 2rem;
+        font-size: 2rem;
+        align-self: flex-start;
+      }
+      p {
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+      }
+    }
+  }
+}

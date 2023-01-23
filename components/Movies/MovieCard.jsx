@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 function MovieCard({ imgPath, title, rating, index, id }) {
   const router = useRouter();
   function handleClick(id) {
-    router.replace(`/movie/${id}`);
+    router.push(`/movie/${id}`);
   }
   return (
     <motion.div

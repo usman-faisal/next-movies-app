@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import MovieDetails from "../../components/MovieDetails/MovieDetails";
 
 function MovieDetailPage(props) {
   const bgImgPath =
@@ -8,27 +8,12 @@ function MovieDetailPage(props) {
     "http://image.tmdb.org/t/p/w500/" + props.data.poster_path;
   return (
     <main className="main">
-      <div className="details-header">
-        <Image
-          blurDataURL="/images/image-placeholder.svg"
-          placeholder="blur"
-          width={500}
-          height={500}
-          src={bgImgPath}
-          alt="hey"
-          style={{ objectFit: "cover" }}
-        />
-      </div>
-      <div className="details-main">
-        <Image
-          blurDataURL="/images/image-placeholder.svg"
-          src={movieImgPath}
-          alt={`image of ${props.title}`}
-          width={300}
-          height={300}
-        />
-        <h3>{props.data.title}</h3>
-      </div>
+      <MovieDetails
+        title={props.data.title}
+        overview={props.data.overview}
+        bgImgPath={bgImgPath}
+        movieImgPath={movieImgPath}
+      />
     </main>
   );
 }
@@ -38,16 +23,16 @@ export default MovieDetailPage;
 export async function getServerSideProps(context) {
   const { params } = context;
   const response = await fetch(
-    `https://api.themoviedb.org/3/movie/${params.movieId}?api_key=4fcf6bd89c0e925e66c089389e26dd0f&language=en-US`
+    `https://api.themoviedb.org/3/movie/${params.movieId}?api_key=${process.env.imbd_api_key}&language=en-US`
   );
   const data = await response.json();
   if (!data || !response.ok) {
     return {
       notFound: true,
-      redirect: {
-        destination: "/",
-        permenant: true,
-      },
+      // redirect: {
+      //   destination: "/",
+      //   permenant: false,
+      // },
     };
   }
   return {
