@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import MoviesSection from "../../components/Movies/MoviesSection";
 import Pagination from "../../components/ui/Pagination";
@@ -7,10 +8,16 @@ function PopularMoviesPage(props) {
   const formattedTitle =
     (title.includes("_") && title.split("_").join(" ")) || title;
   return (
-    <main className="main">
-      <MoviesSection moviesArr={moviesArr} title={formattedTitle} />
-      <Pagination totalPages={4} />
-    </main>
+    <>
+      <Head>
+        <meta name="description" content={`all ${formattedTitle} movies`} />
+        <title>{formattedTitle}</title>
+      </Head>
+      <main className="main">
+        <MoviesSection moviesArr={moviesArr} title={formattedTitle} />
+        <Pagination totalPages={4} />
+      </main>
+    </>
   );
 }
 

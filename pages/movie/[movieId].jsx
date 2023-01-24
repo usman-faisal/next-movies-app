@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import MovieDetails from "../../components/MovieDetails/MovieDetails";
 
@@ -7,14 +8,23 @@ function MovieDetailPage(props) {
   const movieImgPath =
     "http://image.tmdb.org/t/p/w500/" + props.data.poster_path;
   return (
-    <main className="main">
-      <MovieDetails
-        title={props.data.title}
-        overview={props.data.overview}
-        bgImgPath={bgImgPath}
-        movieImgPath={movieImgPath}
-      />
-    </main>
+    <>
+      <Head>
+        <meta
+          name="description"
+          content={`details about ${props.data.title}`}
+        />
+        <title>{props.data.title}</title>
+      </Head>
+      <main className="main">
+        <MovieDetails
+          title={props.data.title}
+          overview={props.data.overview}
+          bgImgPath={bgImgPath}
+          movieImgPath={movieImgPath}
+        />
+      </main>
+    </>
   );
 }
 
@@ -29,10 +39,6 @@ export async function getServerSideProps(context) {
   if (!data || !response.ok) {
     return {
       notFound: true,
-      // redirect: {
-      //   destination: "/",
-      //   permenant: false,
-      // },
     };
   }
   return {

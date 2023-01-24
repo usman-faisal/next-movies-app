@@ -1,12 +1,19 @@
+import Head from "next/head";
 import Hero from "../components/Hero/Hero";
 import MoviesSection from "../components/Movies/MoviesSection";
 
 export default function HomePage(props) {
   return (
-    <main className="main">
-      <Hero />
-      <MoviesSection moviesArr={props.movies} title="Upcoming Movies" />
-    </main>
+    <>
+      <Head>
+        <meta name="page" content="all movies page" />
+        <title>Home page</title>
+      </Head>
+      <main className="main">
+        <Hero />
+        <MoviesSection moviesArr={props.movies} title="Upcoming Movies" />
+      </main>
+    </>
   );
 }
 
