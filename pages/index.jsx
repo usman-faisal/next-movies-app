@@ -6,7 +6,7 @@ export default function HomePage(props) {
   return (
     <>
       <Head>
-        <meta name="page" content="all movies page" />
+        <meta name="description" content="all movies page" />
         <title>Home page</title>
       </Head>
       <main className="main">

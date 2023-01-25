@@ -14,7 +14,7 @@ function MovieCard({ imgPath, title, rating, index, id }) {
     <motion.div
       onClick={() => handleClick(id)}
       initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.01, type: false }}
       viewport={{ once: true }}
       className={styles["movie-card"]}
