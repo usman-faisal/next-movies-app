@@ -61,11 +61,19 @@ html {
   gap: 4.8rem;
   grid-column: 2/3;
   @include media-query("sm") {
-    width: 100%;
     position: static;
     grid-column: 1/-1;
     grid-row: 1/2;
     padding: 0 5rem;
+  }
+  &__movie-details{
+    @include media-query("sm") {
+      width: 100%;
+      position: static;
+      grid-column: 1/-1;
+      grid-row: 1/2;
+      padding: 0 5rem;
+    }
   }
   @include media-query("xsm") {
     padding: 0;

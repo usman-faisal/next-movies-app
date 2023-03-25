@@ -16,7 +16,7 @@ function MovieDetailPage(props) {
         />
         <title>{props.data.title}</title>
       </Head>
-      <main className="main">
+      <main className="main main__movie-details">
         <MovieDetails
           title={props.data.title}
           overview={props.data.overview}
