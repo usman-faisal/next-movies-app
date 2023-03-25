@@ -1,24 +1,16 @@
 @import "../../styles/colors.module.scss";
 .details-header {
-  min-height: 30rem;
-  position: relative;
-  width: 100%;
+  width: auto;
+  height: auto;;
   z-index: -1;
-  background-color: black;
+  text-align: center;
   img {
-    z-index: -1111;
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    filter: brightness(50%);
-    height: 50rem;
-    background-color: black;
+    height: auto;;
   }
 }
 .details-main {
   padding: 2rem;
-
   img {
     width: 30rem;
     height: 30rem;

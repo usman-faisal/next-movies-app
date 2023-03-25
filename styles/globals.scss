@@ -54,13 +54,14 @@ html {
 // main section
 .main {
   position: relative;
-  margin: 2rem 0;
-  padding: 0 10rem;
+  width: 90%;
+  margin: 3rem auto;
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
   grid-column: 2/3;
   @include media-query("sm") {
+    width: 100%;
     position: static;
     grid-column: 1/-1;
     grid-row: 1/2;

@@ -7,7 +7,7 @@ function MoviesSection({ moviesArr, title }) {
       <h2 className="heading-primary">{title}</h2>
       <div className={styles["movies-container"]}>
         {moviesArr.map((movie, index) => {
-          const imgPath = `http://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+          const imgPath = `http://image.tmdb.org/t/p/original/${movie.poster_path}`;
           const { title, id, vote_average } = movie;
           return (
             <MovieCard

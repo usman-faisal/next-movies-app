@@ -34,5 +34,4 @@ function MovieCard({ imgPath, title, rating, index, id }) {
     </motion.div>
   );
 }
-
 export default MovieCard;

@@ -11,10 +11,8 @@ const paths = [
 
 function NavbarList() {
   const router = useRouter();
-  const currentPath =
-    router.pathname === "/"
-      ? "/"
-      : "/sortby/" + router.query.category ?? router.query.category[0];
+  const currentPath =  !router.query.category ? "/" : `/sortby/${router.query.category[0]}`
+
 
   return (
     <ul>

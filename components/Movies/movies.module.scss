@@ -3,19 +3,15 @@
   display: grid;
   column-gap: 2rem;
   row-gap: 3rem;
-  grid-template-columns: repeat(auto-fit, 25rem);
-  max-width: 100%;
-  margin: 0 auto;
-  justify-content: center;
-  @include media-query("lg") {
-    grid-template-columns: repeat(auto-fit, 20rem);
-  }
+  grid-template-columns: repeat(auto-fit, minmax(20rem,1fr));
+  //@include media-query("lg") {
+  //  grid-template-columns: repeat(auto-fit, 20rem);
+  //}
   .movie-card {
     display: grid;
     grid-template-rows: max-content 10rem;
     background-color: #1d1d1d;
     border-radius: 10px;
-    max-width: min-content;
     cursor: pointer;
     @include box-shadow-sm;
     transition: all 0.4s;
@@ -26,12 +22,12 @@
     }
     img {
       border-radius: 10px;
-      height: 25rem;
-      width: 25rem;
-      @include media-query("lg") {
-        height: 20rem;
-        width: 20rem;
-      }
+      height: auto;
+      width: 100%;
+      //@include media-query("lg") {
+      //  height: 20rem;
+      //  width: 20rem;
+      //}
     }
     .textbox {
       padding: 0.5rem 1rem;

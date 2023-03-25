@@ -3,6 +3,7 @@ import Hero from "../components/Hero/Hero";
 import MoviesSection from "../components/Movies/MoviesSection";
 
 export default function HomePage(props) {
+    console.log(props.movies)
   return (
     <>
       <Head>
